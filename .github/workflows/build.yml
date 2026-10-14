@@ -36,7 +36,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v6
         with:
+          # Git tags are tagged with latest
           flavor: latest=auto
+          # Replace with the below if all pushes to PUBLISH_BRANCH should be tagged latest
+          # flavor: latest=${{ github.ref == format('refs/heads/{0}', env.PUBLISH_BRANCH) }}
           images: ${{ env.REGISTRY }}/${{ env.OWNER_IMAGE }}
 
       - name: Set up QEMU

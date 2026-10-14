@@ -9,6 +9,7 @@ To use this repository click `Use this template` and modify [`Dockerfile`](Docke
 [GitHub actions](.github/workflows/build.yml) will build every image for AMD64 and ARM64.
 - Every push to `main` is pushed to `ghcr.io/${{ github.repository }}:main`.
 - Tags are pushed to `ghcr.io/${{ github.repository }}:TAG`.
+- Change the `Docker meta` step if you want all pushes to be tagged `latest`.
 
 ## Licence
 
